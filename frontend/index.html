@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fieldwork — Learning, logged</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-shell">
+
+  <!-- Left: intro / manifesto -->
+  <div class="auth-intro">
+    <div>
+      <h1>Pick a field. Start shipping knowledge.</h1>
+      <p>Sign up, choose the track you're building toward, and get a
+      curated feed of videos, docs and courses for it — plus a quiet
+      log of how much time you're actually putting in.</p>
+    </div>
+
+    <div class="terminal">
+      <div class="line"><span class="prompt">$</span> student login</div>
+      <div class="line out">field: devops</div>
+      <div class="line out">materials: 5 curated resources</div>
+      <div class="line out">time today: 00:00:00</div>
+      <div class="line"><span class="prompt">$</span> <span style="opacity:.6">_</span></div>
+    </div>
+
+    <div>
+      <p style="margin-bottom:8px;">Tracks available at launch:</p>
+      <div class="field-tags">
+        <span class="field-tag">#developer</span>
+        <span class="field-tag">#devops</span>
+        <span class="field-tag">#cybersecurity</span>
+        <span class="field-tag">#linux</span>
+        <span class="field-tag">#cloud</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: auth form -->
+  <div class="auth-form-wrap">
+    <div class="auth-card">
+
+      <div class="tabs">
+        <button class="tab-btn active" id="tab-login-btn" type="button">Log in</button>
+        <button class="tab-btn" id="tab-signup-btn" type="button">Sign up</button>
+      </div>
+
+      <!-- LOGIN -->
+      <form id="login-form">
+        <h2>Welcome back</h2>
+        <p class="subhead">Log in to pick up where you left off.</p>
+
+        <div class="field-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" required autocomplete="email">
+        </div>
+        <div class="field-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn-primary" id="login-submit">Log in</button>
+        <div class="form-msg" id="login-msg"></div>
+      </form>
+
+      <!-- SIGNUP -->
+      <form id="signup-form" class="hidden">
+        <h2>Create your account</h2>
+        <p class="subhead">Takes under a minute. No credit card, obviously.</p>
+
+        <div class="field-group">
+          <label for="signup-name">Full name</label>
+          <input type="text" id="signup-name" required autocomplete="name">
+        </div>
+        <div class="field-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" required autocomplete="email">
+        </div>
+        <div class="field-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" required minlength="8" autocomplete="new-password">
+        </div>
+
+        <button type="submit" class="btn-primary" id="signup-submit">Create account</button>
+        <div class="form-msg" id="signup-msg"></div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

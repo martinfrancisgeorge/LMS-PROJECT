@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Fieldwork</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">field<span class="amber">work</span></div>
+
+    <ul class="field-list" id="field-list">
+      <!-- populated by dashboard.js -->
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="uptime" id="uptime-box">
+        today · <strong id="uptime-today">00:00:00</strong><br>
+        all-time · <strong id="uptime-total">00:00:00</strong>
+      </div>
+      <button class="btn-ghost" id="logout-btn" type="button">Log out</button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="main-header">
+      <div>
+        <h1 id="greeting">Welcome</h1>
+        <p id="subheading">Loading your feed…</p>
+      </div>
+    </div>
+
+    <!-- Shown when the student hasn't picked a field yet -->
+    <div class="onboarding hidden" id="onboarding">
+      <h2>What are you building toward?</h2>
+      <p style="color:var(--text-muted);margin:0;">Pick a track — you can switch or browse others any time.</p>
+      <div class="field-pick-grid" id="field-pick-grid">
+        <!-- populated by dashboard.js -->
+      </div>
+    </div>
+
+    <!-- Material grid -->
+    <div class="material-grid hidden" id="material-grid"></div>
+
+    <!-- Empty state -->
+    <div class="empty-state hidden" id="empty-state">
+      No materials found for this track yet.
+    </div>
+  </main>
+
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/tracker.js"></script>
+</body>
+</html>
