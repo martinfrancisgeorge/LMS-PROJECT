@@ -10,11 +10,11 @@
 USE lms_db;
 
 INSERT INTO fields (slug, label, icon) VALUES
-    ('developer',     'Developer',      '💻'),
-    ('devops',        'DevOps',         '⚙️'),
-    ('cybersecurity', 'Cybersecurity',  '🛡️'),
-    ('linux',         'Linux',          '🐧'),
-    ('cloud',         'Cloud Computing','☁️')
+     ('developer',     'Developer',      CONVERT(0xF09F92BB USING utf8mb4)),
+     ('devops',        'DevOps',         CONVERT(0xE29A99EFB88F USING utf8mb4)),
+     ('cybersecurity', 'Cybersecurity',  CONVERT(0xF09F9BA1EFB88F USING utf8mb4)),
+     ('linux',         'Linux',          CONVERT(0xF09F90A7 USING utf8mb4)),
+     ('cloud',         'Cloud Computing',CONVERT(0xE29881EFB88F USING utf8mb4))
 ON DUPLICATE KEY UPDATE label = VALUES(label);
 
 INSERT INTO materials (field_slug, title, url, resource_type, platform, description) VALUES
