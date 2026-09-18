@@ -1,0 +1,17 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+
+nodes:
+  - role: control-plane
+    extraMounts:
+      - hostPath: /home/martin/lms-project/k8s/lms_data
+        containerPath: /lms_data
+
+  - role: worker
+    extraPortMappings:
+      - containerPort: 30080
+        hostPort: 30080
+        protocol: TCP
+    extraMounts:
+      - hostPath: /home/martin/lms-project/k8s/lms_data
+        containerPath: /lms_data
